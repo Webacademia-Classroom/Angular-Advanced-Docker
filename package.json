@@ -1,0 +1,15 @@
+{
+  "name": "tables",
+  "version": "0.0.0",
+  "scripts": {
+    "build:backend": "cd ./backend && npm i",
+    "build:client": "cd ./frontend && npm run build",
+    "build": "npm run build:client && npm run build:backend",
+    "compose": "npm run build:client && docker-compose up -d --build",
+    "stop": "docker compose stop",
+    "express": "node ./backend/bin/www"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {}
+}

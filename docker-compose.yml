@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build: .
+    hostname: frontend
+    ports:
+      - 3001:3001
+    networks:
+      - mynet
+
+  db:
+    build:
+      context: .
+      dockerfile: ./Dockerfile-DB
+    hostname: db
+    ports:
+      - 3000:3000
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
